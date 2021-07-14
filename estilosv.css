@@ -1,0 +1,674 @@
+@charset UTF-8;
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;700&display=swap');
+@font-face {
+    font-family: 'nillandregular';
+    src: url(fuentes/nilland/nilland-webfont.eot);
+    src: url(nilland-webfont.eot?#iefix) format('embedded-opentype'),
+         url(fuentes/nilland/nilland-webfont.woff2) format('woff2'),
+         url(fuentes/nilland/nilland-webfont.woff) format('woff'),
+         url(fuentes/nilland/nilland-webfont.ttf) format('truetype'),
+         url(fuentes/nilland/nilland-webfont.svg#nillandregular) format('svg');
+    font-weight: normal;
+    font-style: normal;}
+@font-face{
+    font-family: 'LucidaCalligraphyItalic';
+    src: url(fuentes/lucida_calligraphy/lucida-calligraphy-italic.ttf);
+    src: url(lucida-calligraphy-italic.ttf?#iefix) format('embedded-opentype'),
+    url(fuentes/lucida_calligraphy/lucida-calligraphy-italic.ttf) format('truetype'),
+    
+}
+    *{box-sizing: border-box}
+    header, section, article, aside, footer, address, nav, div, h1, h2 {display: block;}
+    body{margin: 0px; font-size: 62.5%;}
+    body>div{min-width:320px;max-width: 1920px;margin:0px;padding:0px;}
+    figure,video{margin: 0px;}
+    img, video{max-width: 100%}
+    .vermas{margin: 5% 0% 10% 35%; padding: 18px 7%;color: rgb(255,255,255); text-decoration: none;font-family: 'nillandregular'; font-size: 1em; color: rgb(255,255,255); background:url(imagenes/decorativas/boton.png) center center/ 90% no-repeat;}
+    .vermas:hover{font-size: 1.1em;background:url(imagenes/decorativas/boton.png) center center/ 100% no-repeat;}
+    .titulo{margin: 0px; padding:2%; color: rgb(106,35,136); font-family: 'nillandregular'; font-size: 2.2em;letter-spacing: 1px;text-align: center; background: url(imagenes/decorativas/separador.png) center bottom / 25% no-repeat;}
+    .subtitulo {color: rgb(106,35,136); font-size: 2em; font-family: 'Hind Madurai', sans-serif; font-weight: 700;}
+    p{font-family: 'Hind Madurai', sans-serif;font-weight: 400; font-size: 1.6em;}
+    .container-all{position: relative; max-width: 100%; width: 100%;overflow: hidden;justify-content: center;    }
+    .item-slide{display:none}
+    .slidemovil{display: flex;transform: translate3d(0, 0, 0);transition: all 1s ease-in-out;animation-name: autoplay;animation-duration: 10s;animation-direction: alternate;animation-fill-mode: forwards;animation-iteration-count: infinite;}
+    .item-slidemovil p:nth-child(2){font-family: 'LucidaCalligraphyItalic';  margin: 20% 5% 0% 64%;  font-size: 1.4em; color: white; text-align: center;position: absolute;}
+    .item-slidemovil p:nth-child(3){margin: 29% 0% 0% 78%; padding: 3%; position: absolute; background: url(imagenes/decorativas/boton.png) center center/ 100% no-repeat;}
+    .item-slidemovil p:nth-child(3) a, .item-slidemovil p:nth-child(3) a:hover, .item-slidemovil p:nth-child(3) a:link{color: rgb(255, 255, 255);font-family: 'nilland'; }
+    .item-slidemovil{position: relative; display: flex;flex-direction: column; flex-shrink: 0;flex-grow: 0;max-width: 100%;}
+    .item-slidemovil img{width: 200%;}
+    .pagination{ position: absolute; bottom: 20px; left: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; width: 100%;}
+    .pagination-item{ display: flex;  flex-direction: column; align-items: center; width: 8px; height: 8px;border-radius: 10px; overflow: hidden; cursor: pointer; background: rgba(106,35,136,0.5); margin: 0px 5px 10px 0px;text-align: center;transition: all 300ms;}
+    .pagination-item:hover{ transform: scale(1.4);background: rgb(106,35,136);}
+    .pagination-item img{ display: inline-block; max-width: none; height: 100%; transform: scale(1); opacity: 0; transition: all 300ms; }
+    .pagination-item:hover img{ opacity: 1;transform: scale(1);}
+    input[id="1"]:checked ~ .slidemovil{animation: none;transform: translate3d(0, 0, 0);}
+    input[id="1"]:checked ~ .pagination .pagination-item[for="1"]{ background: rgb(106,35,136); }
+    input[id="2"]:checked ~ .slidemovil{ animation: none; transform: translate3d(calc(-100% * 1), 0, 0);}
+    input[id="2"]:checked ~ .pagination .pagination-item[for="2"]{background: rgb(106,35,136); }
+    input[id="3"]:checked ~ .slidemovil{animation: none;transform: translate3d(calc(-100% * 2), 0, 0);}
+    input[id="3"]:checked ~ .pagination .pagination-item[for="3"]{ background: rgb(106,35,136);}
+    @keyframes autoplay{ 33%{transform: translate3d(calc(-80% * 0), 0, 0); } 66%{transform: translate3d(calc(-100% * 1), 0, 0);}100%{ transform: translate3d(calc(-100% * 2), 0, 0);}}
+    h3{ margin: 0px; font-family: 'Hind Madurai', sans-serif;font-size: 1.8em; text-align: center;}
+    /*header {padding-bottom: 10%;height: 100%;background: url(imagenes/contenido/foto_de_jabon_xapontic_menor.png) 80% 55% / 150% no-repeat;}*/
+    h1{height: 1px; margin: 3% 0% 2% 3%;  padding: 3% 0% 2% 20%; text-indent: -9999px; position: fixed;z-index: 2;background: url(imagenes/iconos/logo_xapontic.svg) left center / 100% no-repeat;}
+    nav{padding: 0px 0px 60px 0px;width: 100%; height: 10%;position: fixed; z-index: 1; background:url(imagenes/decorativas/nav.png) 80% -11px/ 200% no-repeat }
+    nav h2{display: none}
+.sidenav {height: 100%;width: 0%;top: 0;right: 0;padding-top: 60px; position: fixed;z-index: 1;overflow-x: hidden;background-color: rgb(255,255,255);transition: 0.3s;}
+.sidenav li{list-style: none;}
+.sidenav a, .lip{padding: 10px 8px 8px 32px;display: block; color: rgb(106,35,136); font-family: 'Hind Madurai';font-size: 1.4em; text-decoration: none; transition: 0.3s;}
+.slideshow-container {max-width: 1920px;margin: auto;position: relative;}
+.mySlides{display: none;}
+.Menu{margin: 3% 2% 2% 80%; position: fixed;z-index: 1; cursor: pointer;}
+.X1{transform: rotate(45deg) translateY(6px) translateX(10px);}
+.X2{transform: rotate(-45deg) translateY(-2px) translateX(-5px);}
+.X3{opacity: 0;}
+.capa1,.capa2 ,.capa3  {width: 25px;height: 1px;margin-bottom: 7px;background-color: rgba(20,1,62);border-radius: 2px;transition: all .3s;}
+.capa2{  margin-left: 7px;}
+.submenu1{width: 160%;  padding: 0px;  display: none;  position: relative;  border-radius: 4px;  background-color: rgb(255, 255, 255);}
+.lip:hover .submenu1{display: block;}
+.submenu1 li{font-size: 1.4em}
+.submenu1 li:first-child{margin-top: 5%; font-size: 0.7em;      }
+.submenu1 li:nth-child(2){margin-bottom: 2%;  font-size: 0.7em;}
+.submenu1 li a:link, .submenu li a:visited{padding: 5px 20px; color:rgb(106,35,136)}
+.submenu1 li a:hover{color: rgb(106,35,136);}
+#menuprincipal{display: none;}  
+/*sobre nosotras*/
+.nosotrashome { width: auto; height: auto;padding: 30% 5%;background: url(imagenes/decorativas/cuadro_home_sobre_nosotras_movil.svg) 45% center / 300% no-repeat;}
+.nosotrashome p:nth-child(2) { text-align: center; width: 70%; margin: 7% auto 7% auto;}
+.precio{margin: 2px 0px;text-align: center; color: rgb(106,35,136); font-weight: bold; } 
+/*nuestros productos*/
+.productoshome h2:first-child{padding-top: 10%;}
+.productoshome article:nth-child(2), .productoshome article:nth-child(3), .productoshome article:nth-child(4) {display: grid; margin-top: 16px;}
+.productoshome article:nth-child(2) figure:nth-child(2), .productoshome article:nth-child(3) figure:nth-child(2), .productoshome article:nth-child(4) figure:nth-child(2) {margin: 10%; grid-row: 1;}
+.productoshome p:nth-child(5){margin-top: 10%;}
+.productoshome p:nth-child(6){margin: 20% 0% 20% 20%;}
+.linkpedido{padding: 15% 8%; color:rgb(255,255,255); font-family: 'nillandregular'; font-size: 1.2em;text-align: center; text-decoration: none;  background:url(imagenes/decorativas/boton_realiza_un_pedido.png) center center/ 90% no-repeat;}
+.linkpedido:hover{font-size: 1.4em; background:url(imagenes/decorativas/boton_realiza_un_pedido.png) center center/ 100% no-repeat;}
+.linkproductos:hover img{-moz-transform: scale(1.1) translate(0px, -13px);
+  -webkit-transform: scale(1.1) translate(0px, -13px);
+  -o-transform: scale(1.1) translate(0px, -13px);
+  -ms-transform: scale(1.1) translate(0px, -13px);
+  transform: scale(1.1) translate(0px, -13px);}
+/*proceso de elaboración*/
+.elaboracionhome article:nth-child(2) {margin-top: 16px; padding-top: 50%;background: url(imagenes/iconos/pesar_los_materiales_vertical.svg)center 30%/ 30% no-repeat;}
+.elaboracionhome article:nth-child(3) {padding-top: 50%;background: url(imagenes/iconos/cortar_vertical.svg)center 30%/ 30% no-repeat;}
+.elaboracionhome article:nth-child(4) {padding-top: 50%;background: url(imagenes/iconos/disolucion_del_jugo_vertical.svg)center 30%/ 30% no-repeat;}
+.elaboracionhome p:nth-child(5){margin-top: 20px;}
+/*bazares*/
+.bazareshome{padding: 20% 0%;}
+.bazareshome article:nth-child(2) {padding: 16% 15% 19% 15%; display: grid; grid-template-columns: 40% 60%; grid-row: 10% 90%; grid-column-gap: 4%; background:url(imagenes/decorativas/bazares.png) center center/ 100% no-repeat;}
+.bazareshome article:nth-child(2) h3:first-child{margin: 3% 0% 1% 0%; grid-row:1/2; grid-column: 2/3;}
+.bazareshome article:nth-child(2) p:nth-child(2) {margin-top: 1%; grid-row: 2/3; grid-column: 2/3; font-size: 1.5 em;}
+.bazareshome article:nth-child(2) figure:nth-child(3) {margin-top: 15%; width: 100%; height: 100%; grid-row: 1/3; grid-column: 1/2;}
+.bazareshome article:nth-child(2) figure:nth-child(3) img{margin: auto 0% auto 0%}
+/*novedades*/
+.linknovedades, .linknovedades:link {text-decoration: none; color: rgb(20,1,62);}
+.linknovedades {display: grid;}
+.linknovedades:hover{text-decoration: none; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);}
+.novedadeshome article:nth-child(2), .novedadeshome article:nth-child(3), .novedadeshome article:nth-child(4){margin-top: 16px; padding: 10% 20% 25% 20%;background: url(imagenes/decorativas/cuadro_novedades.svg)center 2%/ 80% no-repeat;}
+.novedadeshome article:nth-child(2) figure,.novedadeshome article:nth-child(3) figure,.novedadeshome article:nth-child(4) figure {grid-row: 1;}
+.fecha {margin:0px; text-align: center; font-size: 1.4em; }
+/*somosinterna*/
+.somosinterna section{padding-bottom: 11%;}
+.somosinterna p{margin-right: 55px; margin-left: 60px;}
+.somosinterna .titulo{padding-top: 20%;}
+.somosinterna section:first-child article:nth-child(2) h3 {display: none;}
+.somosinterna .somosmision h3, .somosinterna .somosvision h3, .somosinterna .somosequipo h2, .somosinterna .somoshistoria h2{text-align: left; margin-left: 60px;}
+.somosinterna .somosvalores h2{display:none;}
+.somosinterna .somosvalores {padding-bottom: 30%;}
+.somosinterna #timeline h2:first-child{height: 40px; background-color: aqua;}
+#timeline {
+    display: flex;
+  
+    &:hover {
+      .tl-item {
+        width: 23%;
+      }
+    }
+  }
+  
+  .tl-item {
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    width: 25%;
+    height: 100vh;
+    min-height: 600px;
+    color: black;
+    overflow: hidden;
+    transition: width 0.5s ease;
+    
+    &:before, &:after {
+      transform: translate3d(0, 0, 0);
+      content: '';
+      position: absolute;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+    }
+  
+    &:after {
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+  
+    &:before {
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 75%);
+      z-index: 1;
+      opacity: 0;
+      transform: translate3d(0, 0, 0) translateY(50%);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  
+    &:hover {
+      width: 30% !important;
+      
+      &:after {
+        opacity: 0;
+      }
+  
+      &:before {
+        transform: translate3d(0, 0, 0) translateY(0);
+        transition: opacity 1s ease, transform 1s ease 0.25s;
+      }
+      
+      .tl-content {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.75s ease 0.5s;
+      }
+  
+      .tl-bg {
+        filter: grayscale(0);
+      }
+    }
+  }
+  
+  .tl-content {
+    transform: translate3d(0, 0, 0) translateY(25px);
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin: 0 1.618em;
+    top: 55%;
+    opacity: 0;
+    
+    h1 {
+      font-family: 'Hind Madurai', sans-serif;
+      text-transform: uppercase;
+      color: #1779cf;
+      font-size: 1.44rem;
+      font-weight: 400;
+    }
+  }
+  
+  .tl-year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 1;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    
+    p {
+      font-family: 'Pathway Gothic One',Helvetica Neue,Helvetica,Arial,sans-serif;
+      font-size: 1.728rem;
+      line-height: 0;
+    }
+  }
+  
+  .tl-bg {
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    background-size: cover;
+    background-position: center center;
+    transition: filter 0.5s ease;
+    filter: grayscale(100%);
+  }
+  
+/*Pedido/articulos seleccionados interna*/
+.tupedido{padding: 10% 5%;}
+.contenedorart{  margin: 20px 3px 30px 2px;  padding: 5px 0px 5px 5px;  display: grid;  grid-template-columns: 10% 30% 20% 20% 18%;  grid-column-gap: 2px;  margin-top: 20px;  background-color: white;}
+div.tituloTabla{  margin-bottom: 5px;  padding: 5px;  font-size: 16px;  font-family: 'Hind Madurai';  font-weight: bold;  color: rgb(106,35,136);}
+.aviso{  margin: 50px auto;    width: 90%;    text-align: center;}
+.aviso span{  font-weight: bold;}
+.botonseguir {  padding: 7%;  font-family: 'nillandregular';  font-size: 0.8em;  letter-spacing: 1px;  text-decoration: none;  color: rgb(255,255,255); background: url(imagenes/decorativas/boton.png) center center/ 90% no-repeat;}
+.seguirviendo{padding:2% ; text-align: center; opacity: 0.7;}
+.realizarpedido{    text-align: center;    padding:2% ;}
+/*pedido login interna*/
+div.camposFormulario{margin-bottom: 10px;margin-right: 2px;padding: 10px 0px 0px 5px;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;}
+.campos{width: 340px;padding: 6px;border: none;background-color: transparent;border: solid 1px rgb(106,35,136);border-radius: 3px;font-size: 16px;}
+::placeholder{color: rgb(150, 150, 150);}
+.botoncampos{padding: 7px 30px; font-family: 'nillandregular';font-size: 1.6em;letter-spacing: 1px;color: rgb(255, 255, 255);background:url(imagenes/decorativas/boton.png) center center/ 90% no-repeat; background-color: transparent; border: none;}
+.mensaje{font-family: 'Hind Madurai';font-size: 12px;font-weight: bold;color: rgb(106,35,136);}
+.sectionsesion{padding: 5%;}
+.iniciosesion form div:first-child{margin-bottom: 5%;text-align: center;}
+.registrate form div:first-child{margin-bottom: 5%;text-align: center;}
+
+
+
+.sectionsesion>.titulo{grid-column: 1/3;grid-row: 1/2;}
+
+
+
+
+.sectionsesion article.iniciosesion{margin: 7% auto;padding: 0px;grid-column: 1/2;grid-row: 2/3;}
+.sectionsesion article.registrate{margin: 7% auto;padding: 0px;grid-column: 2/3;grid-row: 2/3;}
+.sectionsesion p.aviso{grid-column: 1/3;grid-row: 3/4;}
+/*novedades interna*/
+.novedadesinterna{padding-top:60px; display: block; background: url(imagenes/decorativas/cuadro_novedades.svg) 0% 7% / 100% no-repeat, url(imagenes/decorativas/fondo_novedades.png) top center/ 100% no-repeat;}
+.novedadesinterna .titulo{padding-top:50px;}
+.novedadesinterna h3{color: rgb(106,35,136); font-size: 2em; font-family: 'Hind Madurai', sans-serif; font-weight: 700;}
+.novedadesinterna article{padding: 40px; margin-bottom: 10px; margin-top: 40px; background: url(imagenes/decorativas/cuadro_novedades.svg) center center/ 90% no-repeat;}
+.novedadesinterna article:nth-child(2) img{margin-left:50px;}
+.novedadesinterna article:nth-child(3) img{margin-left:50px;}
+.novedadesinterna article p{text-align:center; margin-left:10px; margin-right:10px; font-family: 'Hind Madurai', sans-serif;font-weight: 400; font-size: 1.6em;}
+/*tu pedido*/
+section.tupedido {
+  padding: 30% 13%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 70px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat;
+}
+section.tupedido div:nth-child(3) h3{margin-top: 8%;}
+
+
+
+/*CREAR CUENTA*/
+section.crearcuenta{padding: 30% 13%;background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0% 12% / 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat}
+section.crearcuenta .subtitulo{margin: 10% 0% 0% 0%;}
+div.camposForm{ width: 100%; margin-bottom: 10px;  margin-right: 2px;  padding: 10px 5px 0px 5px;font-family: 'Hind Madurai'; font-size: 1.6em;}
+.fieldset1{margin-top: 8%;}
+.campo{width: 100%;padding: 6px;border: none; background-color: transparent; border: solid 1px rgb(106,35,136); border-radius: 3px;font-size: 16px;}
+.legend{margin: 2% 0% 1% 0%; color:rgb(20,1,62); font-size: 1.8em; font-family: 'Hind Madurai', sans-serif; font-weight: bold;}
+.fieldset {margin-top: 19%; padding:0px; border: none;}
+/*INICIAR SESION*/
+section.sectionsesion {padding: 30% 13%;background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 70px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat;}
+/*GRACIAS*/
+section.gracias {padding: 30% 13%;background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 70px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat;}
+section.gracias .subtitulo{margin-top: 10%;}
+section.gracias p{margin:5% auto;width:90%; text-align: center;}
+/*CUENTA*/
+section.cuenta{padding: 33% 13%;background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0% 86px / 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat}
+section.cuenta_editar{padding: 33% 13%;background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0% 86px / 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat}
+.fieldset3{margin: 10% 0% 0% 0%;}
+.ccform>div.camposForm{display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;-webkit-flex-wrap: nowrap;-ms-flex-wrap: nowrap;flex-wrap: nowrap;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;}
+.botonform {  width: 110px;height: 40px;margin: 2%;padding: 10px 10px;font-family: 'nillandregular';font-size: 1em;letter-spacing: 1px;color: rgb(255, 255, 255);background: url(imagenes/decorativas/boton.png) center center/ 100% no-repeat;border: none;cursor: pointer;}
+.cuenta .subtitulo{margin-top: 3%;}
+.sesionAdmin{padding: 2% 0% 5% 0%;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;-webkit-flex-wrap: wrap;-ms-flex-wrap: wrap;flex-wrap: wrap;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;-webkit-align-content: stretch;-ms-flex-line-pack: stretch;align-content: stretch;-webkit-align-items: flex-start;-ms-flex-align: start;align-items: flex-start;font-family: 'Hind Madurai', sans-serif;font-weight: 400; font-size: 1.6em;}
+.camposForm span{color: rgb(20,1,62); font-weight: bold;}
+textarea{font-family: 'Hind Madurai';}
+/*RESUMEN_PEDIDO*/
+section.checkout {padding: 30% 13%;background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 70px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat;}
+section.checkout .camposForm{display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-flex-direction: row;-ms-flex-direction: row;flex-direction: row;-webkit-flex-wrap: nowrap;-ms-flex-wrap: nowrap;flex-wrap: nowrap;-webkit-justify-content: center;-ms-flex-pack: center;justify-content: center;}
+section.checkout article.resumen_cuenta{margin-top: 10%;}
+section.checkout article.resumen_pedido{margin-top: 5%;}
+section.checkout .camposForm{ margin-top: 5%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*footer*/
+footer {padding: 20% 5% 10% 5%;font-family: 'Hind Madurai';background: url(imagenes/decorativas/footer_movil.jpg)center top/ 100% no-repeat;}
+footer h2{color: rgb(255,255,255); font-family: 'nillandregular'; font-size: 1.8em;}
+footer h2 span:nth-child(2){font-size: 0.5em;}
+.vcard{margin:10% 0%;font-size: 1.4em; color: rgb(255, 255, 255); text-align: left;}
+.vcard a{color: rgb(255, 255, 255); text-decoration: none;}
+.menualterno {margin:10% 0%;text-align: center;}
+.menualterno li{margin-top:6%;list-style: none;}
+.menualterno a{color: rgb(255, 255, 255); font-size: 1.4em; text-decoration: none;}
+.menualterno a:hover{color: rgb(106,35,136);}
+footer div:nth-child(3) aside:first-child h2{display:none;}
+footer p:nth-child(5){margin:10% 0%;font-size: 1.2em; color: rgb(255, 255, 255); text-align: left;}
+.email{padding: 2% 15%; background: url(imagenes/iconos/iconos_footer.png) 6% 35% / 8% no-repeat;}
+.tel {padding: 2% 15%; background: url(imagenes/iconos/iconos_footer.png) 4% 0% / 7% no-repeat;}
+.adr {padding: 2% 2% 0% 15%;background: url(imagenes/iconos/iconos_footer.png) 4.8% 120% / 8% no-repeat;}
+.street-address{padding-top: 3%;}
+.redes .liredes{padding: 2%; display: inline-flex; text-indent: -9999px;list-style: none;align-items: center;}
+.fb {width: 40px; height: 40px;background: url(imagenes/iconos/redes_footer.png) 0% 20% / 500% no-repeat;}
+.ig{width: 40px; height: 40px;background: url(imagenes/iconos/redes_footer.png) 24% 20% / 480% no-repeat;}
+.am{width: 80px; height: 40px;padding: 5% 18%; background: url(imagenes/iconos/redes_footer.png) 110% 50% / 170% no-repeat;}
+.fb:hover {background: url(imagenes/iconos/redes_footer.png) 0% 20% / 530% no-repeat;}
+.ig:hover {background: url(imagenes/iconos/redes_footer.png) 24% 20% / 530% no-repeat;}
+.am:hover {background: url(imagenes/iconos/redes_footer.png) 110% 50% / 180% no-repeat;}
+div.iconos{margin-bottom: 5px;
+  margin-right: 2px;
+  text-align: center;
+  padding-top: 5px;}
+  div.iconos a, div.iconos a:active, div.iconos a:link{color: rgb(20,1,62);}
+  div.iconos a:hover{font-weight: bold; color: rgb(106,35,136);}
+@media screen and (min-width: 640px){
+    .titulo{font-size: 2.8em;}
+    .subtitulo{font-size: 2.6em;}
+    p{font-size: 1.8em;}
+    .vermas {margin: 5% 0% 10% 38%;}
+    nav{padding: 0px 0px 150px 0px; background: url(imagenes/decorativas/nav.png) 80% -15%/ 150% no-repeat;}
+    /*sobre nosotras*/
+    .nosotrashome p:nth-child(2) {margin: 5% auto 5% auto;}
+    .nosotrashome {background: url(imagenes/decorativas/cuadro_home_sobre_nosotras_movil.svg) 45% center / 250% no-repeat;}
+    /*bazares*/
+    .bazareshome article:nth-child(2) figure:nth-child(3){margin-top: 0px;}
+    /*novedades*/
+    .novedadeshome article:nth-child(2), .novedadeshome article:nth-child(3), .novedadeshome article:nth-child(4){background: url(imagenes/decorativas/cuadro_novedades.svg)center 2%/ 70% no-repeat;}
+    footer {background: url(imagenes/decorativas/footer_movil.jpg)center 0%/ 100% no-repeat;}
+    .email{padding: 2% 15%; background: url(imagenes/iconos/iconos_footer.png) 9% 35% / 8% no-repeat;}
+    .tel {padding: 2% 15%; background: url(imagenes/iconos/iconos_footer.png) 4% 0% / 5% no-repeat;}
+    .adr {padding: 2% 2% 0% 15%;background: url(imagenes/iconos/iconos_footer.png) 4.8% 100% / 4% no-repeat;}
+    .legend{color:rgb(20,1,62); font-size: 2em;}
+    /*novedadesinterna*/
+    .novedadesinterna{padding-top:150px; margin-top: 0px;  background: url(imagenes/decorativas/cuadro_novedades.svg) 0% 47%/ 100% no-repeat, url(imagenes/decorativas/fondo_novedades.png) top center/ 100% no-repeat; display:grid; grid-template-columns: 50% 50%; grid-template-rows: 20% 40% 40;}
+    .novedadesinterna .titulo{grid-row: 1/2; grid-column: 1/3;}
+    .novedadesinterna article {width:300px; margin-top:20px; margin-bottom: 80px; padding: background: url(imagenes/decorativas/cuadro_novedades_ipad.svg) center center/ 100% no-repeat;}
+    .novedadesinterna article:nth-child(2){grid-column: 1/2; grid-row: 2/3; margin-left:20px;}
+    .novedadesinterna article:nth-child(3){grid-column: 2/3; grid-row: 2/3;}
+    .novedadesinterna article:nth-child(4){grid-column: 1/2; grid-row: 3/4; margin-left:20px; margin-top: -90px;}
+    .novedadesinterna h3{font-size: 2.4em;}
+    .novedadesinterna  p{font-size: 1.8em;}
+}
+@media screen and (min-width: 768px){
+    /*carousel*/
+    .item-slidemovil{display:none}
+    .slide{display: flex;transform: translate3d(0, 0, 0);transition: all 1s ease-in-out;animation-name: autoplay;animation-duration: 10s;animation-direction: alternate;animation-fill-mode: forwards;animation-iteration-count: infinite;}
+    .item-slide p:nth-child(2) {font-family: 'LucidaCalligraphyItalic';margin: 17.2% 4% 0% 59%; font-size: 2.4em;color: white;text-shadow: 1px 1px rgba(0,0,0,0.5);text-align: center;position: absolute;}
+    .item-slide{position: relative; display: flex;flex-direction: column; flex-shrink: 0;flex-grow: 0;max-width: 100%;}
+    .item-slide img{width: 200%;}
+    input[id="1"]:checked ~ .slide{animation: none;transform: translate3d(0, 0, 0);}
+    input[id="2"]:checked ~ .slide{ animation: none; transform: translate3d(calc(-100% * 1), 0, 0);}
+    input[id="3"]:checked ~ .slide{animation: none;transform: translate3d(calc(-100% * 2), 0, 0);}
+    header p:nth-child(4){margin-left: 25%;}
+    nav{background:url(imagenes/decorativas/nav.png) 80% -30%/ 120% no-repeat}
+    .nosotrashome {padding: 17% 5%;background: url(imagenes/decorativas/cuadro_home_sobre_nosotras.svg) center center/ 95% no-repeat}
+    /*productos*/
+    .productoshome{display: grid; grid-template-columns: repeat(3,auto); grid-template-rows: repeat 10% 40% 20% 30%}
+    .productoshome h2:first-child {padding-top:0%; grid-row: 1/2; grid-column: 1/4;}
+    .productoshome article:nth-child(2){margin-top: 15%; grid-row: 2/3; grid-column:1/2;}
+    .productoshome article:nth-child(3){margin-top: 15%; grid-row: 2/3; grid-column:2/3;}
+    .productoshome article:nth-child(4){margin-top: 15%; grid-row: 2/3; grid-column:3/4;}
+    .productoshome p:nth-child(5){grid-row: 3/4; grid-column: 1/4;}
+    .productoshome p:nth-child(6){grid-row: 4/5; grid-column: 1/4;}
+    .productoshome article:nth-child(2) figure:nth-child(2), .productoshome article:nth-child(3) figure:nth-child(2), .productoshome article:nth-child(4) figure:nth-child(2) {margin: 0% 10% 0% 0%; grid-row: 1;}
+    .productoshome {padding: 0% 10%;}
+    /*proceso de elaboración*/
+    .elaboracionhome{display:grid; grid-template-rows: repeat(3, auto); grid-template-columns: repeat(3,auto);}
+    .elaboracionhome h2{grid-row: 1/2; grid-column: 1/4;}
+    .elaboracionhome article:nth-child(2){margin-top:10%;padding: 200px 0% 0% 0%; grid-row: 2/3; grid-column: 1/2;background: url(imagenes/iconos/pesar_los_materiales.svg) 100% 40%/ 55% no-repeat;}
+    .elaboracionhome article:nth-child(2) h3{padding-left: 17%;}
+    .elaboracionhome article:nth-child(3){margin-top:10%;padding: 210px 0% 0% 0%; grid-row: 2/3; grid-column: 2/3; background: url(imagenes/iconos/cortar.svg) center 40%/ 65% no-repeat;}
+    .elaboracionhome article:nth-child(3) h3{padding-right: 30%;}
+    .elaboracionhome article:nth-child(4){margin-top:10%;padding: 200px 0% 0% 0%; grid-row: 2/3; grid-column: 3/4;background: url(imagenes/iconos/disolucion_del_jugo.svg) 10% 40%/ 55% no-repeat;}
+    .elaboracionhome article:nth-child(4) h3{padding-right: 50%;}
+    .elaboracionhome p:nth-child(5){margin-top: 70px; grid-row: 3/4; grid-column: 1/4;}
+    .productoshome p:nth-child(6) {margin: 20% 0% 20% 28%;}
+    /*bazares*/
+    .bazareshome { padding: 10% 0%; }
+    .bazareshome article:nth-child(2){padding: 12% 25% 15% 25%; background: url(imagenes/decorativas/bazares.png) center center/ 70% no-repeat;}
+    /*novedades*/
+    .novedadeshome{margin-bottom: 15%;  display:grid; grid-template-columns: repeat(3,auto); grid-template-columns: repeat(3,auto);}
+    .novedadeshome article:nth-child(2), .novedadeshome article:nth-child(3), .novedadeshome article:nth-child(4){ width: 250px;margin:15% auto;display:grid;padding:10%; background: url(imagenes/decorativas/cuadro_novedades_ipad.svg)center 2%/ 100% no-repeat;}
+   .novedadeshome h2{grid-row: 1/2; grid-column: 1/4;}
+    .novedades article:nth-child(2) {padding: 10%; grid-row: 2/3;grid-template-rows: 35% 10% 10% 30%;grid-column: 3/4;}
+    .novedadeshome article:nth-child(2) figure, .novedadeshome article:nth-child(3) figure, .novedadeshome article:nth-child(4) figure{ width: 80%; margin: auto;padding-top: 5%;}
+    .novedadeshome article:nth-child(1){grid-row: 2/3; grid-column: 1/2;}
+    .novedadeshome article:nth-child(3){grid-row: 2/3; grid-column: 2/3;}
+    .novedadeshome article:nth-child(2){grid-row: 2/3; grid-column: 3/4;}
+    /*pedido articulos selecccinados interna*/
+    section.tupedido {
+      padding: 19% 13%;}
+    div.botones{display: grid; grid-template-columns: repeat(4,auto);}
+    .seguirviendo {grid-column: 3/4;text-align: right;}
+  .realizarpedido {grid-column: 4/5;text-align: right;}
+.aviso{width: 60%;}
+
+
+
+
+
+
+
+
+
+
+/*INICIAR SESION*/
+.campos {width: 250px;}
+section.sectionsesion{padding: 20% 10%;display: grid;grid-template-columns: 50% 50%;grid-template-rows: auto;}
+.sectionsesion article.iniciosesion {
+  margin: 14% auto 0% auto}
+.sectionsesion article.registrate{margin: 14% auto 0% auto}
+/*GRACIAS*/
+section.gracias{padding: 20% 10%;}
+section.gracias .subtitulo{margin-top: 8%;}
+section.gracias p{width:60%;}
+/*CUENTA*/
+section.cuenta {padding: 20% 13%;background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 90px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat}
+section.cuenta_editar {padding: 20% 13%;background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 90px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat}
+.fieldset3 {margin-top: 7%;display: grid;grid-template-columns: 50% 50%;}
+.legend {color: rgb(20,1,62);font-size: 2em;grid-column: 1/3;}
+.ccform>div.camposForm{-webkit-justify-content: flex-end;-ms-flex-pack: end;justify-content: flex-end;}
+.botonform {width: 180px;height: 45px;margin: 2% 0% 2% 5%;font-size: 1.3em;letter-spacing: 1px;color: rgb(255, 255, 255);background: url(imagenes/decorativas/boton.png) center center/ 90% no-repeat;}
+.botonform:hover {width: 190px;}
+div.sesionAdmin{font-size: 1.8em;}
+section.crearcuenta {padding: 20% 13%;background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 90px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat}
+.ccform .fieldset{display: grid; grid-template-rows: auto; grid-template-columns: 50% 25% 25%;}
+.ccform .fieldset legend{grid-row: 1/2; grid-column: 1/4;}
+.ccform .fieldset div:nth-child(2){grid-column: 1/2; grid-row: 2/3;}
+.ccform .fieldset div:nth-child(3){grid-column: 2/3; grid-row: 2/3;}
+.ccform .fieldset div:nth-child(4){grid-column: 3/4; grid-row: 2/3;}
+.ccform .fieldset div:nth-child(5){grid-column: 1/2; grid-row: 3/4;}
+.ccform .fieldset div:nth-child(6){grid-column: 2/4; grid-row: 3/4;}
+.ccform .fieldset div:nth-child(7){grid-column: 1/2; grid-row: 4/5;}
+.ccform .fieldset div:nth-child(8){grid-column: 2/4; grid-row: 4/5;}
+.ccform .fieldset div:nth-child(9){grid-column: 1/4; grid-row: 5/6;}
+.fieldset1 div.camposForm{width: 50%}
+.fieldset {margin-top: 8%;}
+/*CHECKOUT*/
+section.checkout {padding: 20% 13%; display:grid;grid-template-columns: 50% 50%; grid-template-rows: auto; background:  linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 90px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat}
+section.checkout .titulo{grid-column: 1/3;}
+section.checkout article.resumen_cuenta{grid-column: 1/2;}
+section.checkout article.resumen_pedido{margin-top: 10%;grid-column: 2/3;}
+section.checkout .camposForm{grid-column: 1/3; display: -ms-flexbox;-webkit-justify-content: flex-end;-ms-flex-pack: end;justify-content: flex-end;}
+section.checkout .aviso{grid-column: 1/3;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*novedades interna*/
+.novedadesinterna{background: url(imagenes/decorativas/cuadro_novedades.svg) 0px 222px/ 100% no-repeat, url(imagenes/decorativas/fondo_novedades.png) 0px 60px/ 100% no-repeat; padding-bottom: 150px;}
+.novedadesinterna h2:first-child{padding-top: 120px;}
+.novedadesinterna article{padding-bottom:30px; padding-top: 20px;}
+.novedadesinterna article:nth-child(2){margin-left:60px;}
+.novedadesinterna article:nth-child(3){margin-left:20px;} 
+.novedadesinterna article:nth-child(4){margin-left:60px;} 
+    /*footer*/
+    footer {display:grid; grid-template-columns: 50% 50%; grid-row: auto; font-size: 1.4em;}
+    footer h2{grid-column: 1/2; grid-row: 1/2;}
+    footer .vcard{grid-column: 1/2; grid-row: 2/3;}
+    footer .mapadenav{grid-column: 2/3; grid-row: 1/3;}
+    footer .redes{grid-column: 2/3; grid-row: 3/4;}
+    footer p:nth-child(5){grid-column: 1/3; grid-row: 4/5;}
+    .email{padding: 2% 15%; background: url(imagenes/iconos/iconos_footer.png) 4% 35% / 8% no-repeat;}
+    .tel {padding: 2% 15%; background: url(imagenes/iconos/iconos_footer.png) 4% 1% / 8% no-repeat;}
+    .adr {padding: 2% 2% 0% 15%;background: url(imagenes/iconos/iconos_footer.png) 3% 100% / 9% no-repeat;}
+}
+@media screen and (min-width: 1024px){
+    h1{ margin: 1.5% 0% 2% 3%;background: url(imagenes/iconos/logo_xapontic.svg) left center / 80% no-repeat;}
+    .titulo{font-size: 3em;}
+    .subtitulo {font-size: 2.8em;}
+    .legend{color:rgb(20,1,62); font-size: 2.2em;}
+    p{font-size: 2em;}
+    nav{padding: 0px 0px 120px 0px; background: url(imagenes/decorativas/nav.png) 80% -20px/ 110% no-repeat}
+    .Menu {display: none;}
+    header>p:nth-child(2){width: 40%; font-size: 2.0em} 
+    #menuprincipal{margin: 2% 1% 1% 27%; padding-left: 0%; display: grid; grid-template-columns: repeat(8,auto); justify-content: stretch; font-family: 'Hind Madurai', sans-serif; font-size: 1.8em; text-align: center;}
+    #menuprincipal li{padding: 5px; position: relative; font-size: 1em; color:rgb(20,1,62);list-style: none;}
+    #menuprincipal ul{margin: 0px 10px 0px -40px; padding: 0px;}
+    #menuprincipal li a:link, #menuprincipal li a:visited{width: 100%; height: 30px; color:rgb(20,1,62);text-decoration:none;}
+    #menuprincipal li a:hover{color: rgb(106,35,136);}
+    .submenu{width: 160%; top: 100%; display: none; position: absolute; border-radius: 4px; background-color: rgb(255, 255, 255);}
+    #menuprincipal li:hover .submenu{display: block;}
+    .submenu li{font-size: 1.4em}
+    .submenu li:first-child{margin-top: 10%;}
+    .submenu li:nth-child(2){margin-bottom: 5%;}
+    .submenu li a:link, .submenu li a:visited{color:rgb(106,35,136)}
+    .submenu li a:hover{color: rgb(106,35,136);}
+    /*sobre nosotras*/
+    .nosotrashome p:nth-child(2) { text-align: center; width: 60%;margin: 5% auto 5% auto; }
+    .nosotrashome {background: url(imagenes/decorativas/cuadro_home_sobre_nosotras.svg) 45% center / 90% no-repeat;}
+    /*novedades*/
+    .novedadeshome article:nth-child(2), .novedadeshome article:nth-child(3), .novedadeshome article:nth-child(4){ width: 310px; background: url(imagenes/decorativas/cuadro_novedades_desktop.svg)center 2%/ 100% no-repeat;}
+    .novedadeshome article:nth-child(2):hover, .novedadeshome article:nth-child(3):hover, .novedadeshome article:nth-child(4):hover{background: url(imagenes/decorativas/cuadro_novedades_desktop.svg)center 2%/ 104% no-repeat;}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*PEDIDO ARTICULOS*/
+    section.tupedido {
+    padding: 23% 13%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 23%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 90px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat;
+}
+div.sesionAdmin{font-size: 2em;}
+
+
+
+
+
+
+
+
+
+
+    /*pedido login interna*/
+    .campos {width: 340px;}
+    /*novedades interna*/
+    .novedadesinterna{background: url(imagenes/decorativas/cuadro_novedades.svg) 0px 282px/ 100% no-repeat, url(imagenes/decorativas/fondo_novedades.png) 0px 60px/ 100% no-repeat; padding-bottom: 100px; padding-bottom: 10px;}
+    .novedadesinterna h2:first-child {padding-top: 190px;font-size: 3em;}
+    .novedadesinterna article:nth-child(2){margin-left:130px;}
+    .novedadesinterna article:nth-child(3){margin-left:70px;}
+    .novedadesinterna article:nth-child(4){margin-left:130px; margin-top: -80px;}
+    .novedadesinterna h3{font-size: 2.4em;}
+    .novedadesinterna p{font-size: 2em;}
+
+    /*footer*/
+    footer {display: grid;grid-template-columns: 30% 70%;grid-row: auto; padding: 12% 3% 0% 4%;background: url(imagenes/decorativas/footer.png)center top/ 180% no-repeat;}
+    footer .vcard{grid-row: 2/4;}
+    footer .mapadenav{grid-row: 1/2;}
+    footer .redes{grid-row: 2/3;}
+    footer p:nth-child(5){grid-column: 2/3; grid-row: 3/4;text-align: end;}
+    .menualterno { margin: 2% 0%; padding-left: 0%; display: flex; justify-content: flex-end}
+    .menualterno li{padding-left: 1%;}
+    .menualterno a {font-size: 1.2em;}
+    .tel {padding: 2% 18%; background: url(imagenes/iconos/iconos_footer.png) 4% 0% / 10% no-repeat; }
+    .email {padding: 2% 18%; background: url(imagenes/iconos/iconos_footer.png) 3% 35% / 9% no-repeat;}
+    .adr {background: url(imagenes/iconos/iconos_footer.png) 4% 120% / 11% no-repeat;}
+    .street-address {padding-top: 5%;}
+    .redes ul{display: flex;
+      justify-content: flex-end}
+    .redes li {padding-left: 4%;}
+@media screen and (min-width: 1280px){
+    .item-slide p:nth-child(2) { font-family: 'LucidaCalligraphyItalic'; margin: 19% 6% 0% 59%; font-size: 2.4em; color: white; text-shadow: 1px 1px rgba(0,0,0,0.5); text-align: center; position: absolute;}
+    nav{padding: 0px 0px 150px 0px;background: url(imagenes/decorativas/nav.png) center -30px/ 110% no-repeat; }
+    .elaboracionhome article:nth-child(2){padding: 240px 0% 0% 0%; }
+    .elaboracionhome article:nth-child(3){padding: 250px 0% 0% 0%;}
+    .elaboracionhome article:nth-child(4){padding: 240px 0% 0% 0%;}
+    .productoshome p:nth-child(6) {
+      margin: 20% 0% 20% 31%;
+  }
+  /*novedades interna*/
+  .novedadesinterna{display: grid; grid-template-columns: 33% 33% 33% ;  grid-template-rows: 20% 80%;}
+  .novedadesinterna h2{grid-column:1/4; grid-row: 1/2;}
+  .novedadesinterna article{margin: 0px; grid-row: 2/3; background: url(imagenes/decorativas/cuadro_novedades_desktop.svg) top center/ 100% no-repeat;}
+  .novedadesinterna article:nth-child(2){grid-column:1/2; margin-left:auto;}
+  .novedadesinterna article:nth-child(3){grid-column:2/3; margin-left:auto;}
+  .novedadesinterna article:nth-child(4){grid-column:3/4; margin-left:auto; margin-top: 0px;}
+/*pedido articulos*/
+section.tupedido {
+  padding: 22% 13%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,1) 45%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat;
+}
+/*pedido crear cuenta*/
+section.crearcuenta {padding: 20% 13%; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat;}
+section.crearcuenta .subtitulo {margin: 5% 0% 0% 0%;}
+.fieldset1 {margin-top: 4%;}
+.fieldset {margin-top: 4%;}
+
+
+
+
+
+
+
+
+
+/*INICIAR SESION*/
+section.sectionsesion {
+    padding: 20% 10%;
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat;
+}
+/*GRACIAS*/
+section.gracias {
+  padding: 20% 10%;
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 31%, rgba(255,255,255,1) 49%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) top center/ 180% no-repeat;
+}
+section.gracias p{width:50%;margin: 3% auto;}
+/*CUENTA*/
+.cuenta .sesionAdmin {font-size: 3.0em; color: rgb(106,35,136); font-family: 'nillandregular';}
+section.cuenta {padding: 20% 13%; background: url(imagenes/decorativas/flores_info_contacto.svg) -70px 830px / 40% no-repeat, url(imagenes/decorativas/flores_info_contacto_2.svg) 900px 830px / 40% no-repeat, linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat;}
+section.cuenta_editar {padding: 20% 13%; background: url(imagenes/decorativas/flores_info_contacto.svg) -70px 984px / 40% no-repeat, linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat;}
+/*CHECKOUT*/
+section.checkout {padding: 20% 13%; background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 26%, rgba(255,255,255,1) 37%, rgba(255,255,255,1) 100%), url(imagenes/decorativas/contenedor.svg) 0px 170px/ 100% no-repeat, url(imagenes/decorativas/fondo_pedido.png) 0px 50px/ 100% no-repeat;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {background: url(imagenes/decorativas/footer.png)center top/ 160% no-repeat;}
+    .tel {padding: 2% 18%; background: url(imagenes/iconos/iconos_footer.png) 4% 0% / 9% no-repeat; }
+    .adr {background: url(imagenes/iconos/iconos_footer.png) 3% 110% / 9% no-repeat;}
+    .menualterno { margin: 2% 0%; padding-left: 20%; display: flex;}
+    footer p:nth-child(5){padding-left: 20%;}
+
+
+}
